@@ -1,0 +1,35 @@
+.quote-line{
+    color:black;
+   
+    font-size: xx-large;
+    font-style: bold ;
+    font-family:"Times New Roman", Georgia, Times, serif;
+}
+.navbar{
+    background-color: cadetblue;
+
+}
+.logo{
+    border-image-outset: 10px;
+}
+.quote-line{
+    color:whitesmoke;
+    position: relative;
+}
+.quote-line:hover{
+    color:crimson;
+    opacity: 0.5;
+}
+.is-light {
+  margin:5px;
+  color:whitesmoke;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: inherit;
+  font-size: 20px;
+  
+}
+.is-light:hover{
+    color:indigo;
+    border:whitesmoke;
+    opacity: 0.5;
+}

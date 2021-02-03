@@ -1,0 +1,58 @@
+    <form [formGroup]="organizationForm" class="organization" >
+        <h1 id="heading">ORGANIZATION DETAILS</h1>
+        <hr>
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">License Number:</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input" formControlName="licenseNumber"
+                            name="licenseNumber" [(ngModel)]="organization.licenseNumber">
+                    </div>
+                </div>
+                <p class="help is-danger" *ngIf="hasError('licenseNumber','required')">*required</p>
+            </div>
+            <div class="column"></div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Registered Name:</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input" formControlName="registeredName"
+                            name="registeredName" [(ngModel)]="organization.registeredName">
+                    </div>
+                </div>
+                <p class="help is-danger" *ngIf="hasError('registeredName','required')">*required</p>
+
+            </div>
+            <div class="column"></div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Ownership details:</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input" formControlName="OwnerShip"
+                            name="OwnerShip" [(ngModel)]="organization.OwnerShip">
+                    </div>
+                </div>
+                <p class="help is-danger" *ngIf="hasError('OwnerShip','required')">*required</p>
+
+            </div>
+            <div class="column"></div>
+        </div>
+        <div>
+             <input type="text"  formControlName="userId" name="userId" hidden [(ngModel)]="organization.user.userId"> 
+        </div>
+        <div class="form is-grouped">
+
+            <button class="button is-primary" (click)="saveOrganizationDetails()" [disabled]="organizationForm.invalid">Save</button>
+            <button class="button is-primary" (click)="next()" [disabled]="organizationForm.invalid">Next</button>
+
+            <button class="button is-primary" id="cancel" (click)="cancel()" [disabled]="organizationForm.pristine">Cancel</button>
+
+
+        </div>
+    </form>
+<hr>

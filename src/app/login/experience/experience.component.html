@@ -1,0 +1,28 @@
+
+<form class="experienceform" [formGroup]="experienceform">
+    <h1 id="heading">Share Your Experience</h1>
+    <hr>
+    <div class="columns">
+        <div class="field">
+            <label class="label">Write About Your Some Experience</label>
+            <textarea class="textarea" placeholder="Enter yourExperience Details" name="freeText" formControlName="freeText" [(ngModel)]="experience.freeText">
+            </textarea>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <label class="label">Upload Your Some Documents</label>
+            <input class="input" type="file" placeholder="Text input" formControlName="documents"
+            name="documents" (change)="onDocumentSelect($event)" >
+            <input type="text" hidden formControlName="userId" [(ngModel)]="experience.user.userId">
+        </div>
+    </div>
+
+    
+    <hr>
+    <div>
+        <button class="button is-primary" id="save" (click)="saveExperience()" [disabled]="experienceform.invalid">Save</button>
+        <button class="button is-primary" (click)="next()" >Next</button>
+        <button class="button is-primary" id="cancel" (click)="cancel()" [disabled]="experienceform.pristine">Cancel</button>
+    </div>
+</form>

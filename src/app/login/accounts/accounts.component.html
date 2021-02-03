@@ -1,0 +1,248 @@
+<form [formGroup]="accountForm" class="accountform">
+    <h1 id="heading">Account Details</h1>
+    <hr>
+    <div class="columns">
+        <div class="column">
+            <div class="field">
+                <label class="label">Account Number:</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input" formControlName="accountNumber" name="accountNumber" [(ngModel)]="accountObject.accountNumber">
+                </div>
+            </div>
+            <p class="help is-danger" *ngIf="hasError('accountNumber','required')">*required</p>
+        </div>
+        <div class="column">
+            <div class="field">
+                <label class="label">IFSC CODE:</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input" formControlName="ifscCode" name="ifscCode" [(ngModel)]="accountObject.ifscCode">
+                </div>
+            </div>
+            <p class="help is-danger" *ngIf="hasError('ifscCode','required')">*required</p>
+        </div>
+        
+    </div>
+    <hr>
+    <div class="columns">
+        <div class="column">
+            <div class="field">
+                <label class="label">Alternate Account Number:</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input" formControlName="alternateAccountNumber" name="alternateAccountNumber" [(ngModel)]="accountObject.alternateAccountNumber">
+                </div>
+            </div>
+            <p class="help is-danger" *ngIf="hasError('alternateAccountNumber','required')">*required</p>
+
+
+        </div>
+        <div class="column">
+            <div class="field">
+                <label class="label">Alternate IFSC Code:</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input" formControlName="alternateIfscCode" name="alternateIfscCode" [(ngModel)]="accountObject.alternateIfscCode">
+                </div>
+            </div>
+            <p class="help is-danger" *ngIf="hasError('alternateIfscCode','required')">*required</p>
+
+
+        </div>
+    </div>
+    <hr>
+    <!-- nominee details -->
+    <div class="columns">
+        <div class="column">
+            <div class="field">
+                <label class="label">Nominee Name:</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input" formControlName="nomineeName" name="nomineeName" [(ngModel)]="accountObject.nomineeName">
+                    <p class="help is-danger" *ngIf="hasError('nomineeName','required')">*required</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="field">
+                <label class="label">Nominee Relation:</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input" formControlName="nomineeRelation" name="nomineeRelation" [(ngModel)]="accountObject.nomineeRelation">
+                    <p class="help is-danger" *ngIf="hasError('nomineeName','required')">*required</p>
+
+                </div>
+            </div>
+            
+           
+        </div>
+        
+    </div>
+    <div class="columns">
+        <div class="column">
+            <label class="label">Phone No.</label>
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field is-expanded">
+                        <div class="field has-addons">
+                            <p class="control">
+                                <a class="button is-static">
+                                    +91
+                                </a>
+                            </p>
+                            <p class="control is-expanded">
+                                <input class="input" type="tel" placeholder="Your phone number"
+                                    formControlName="nomineeNumber"
+                                    name="nomineeNumber" [(ngModel)]="accountObject.nomineeNumber" maxlength="10" minlength="10">
+                            </p>
+                        </div>
+                        <p class="help">Do not enter the first zero</p>
+                        <p class="help is-danger" *ngIf="hasError('nomineeNumber','required')">*required</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="column">
+            <label class="label">Email:</label>
+                    <!-- email -->
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left has-icons-right">
+                            <input class="input is-success" type="email" placeholder="Email" 
+                                formControlName="nomineeEmail"
+                                name="nomineeEmail" [(ngModel)]="accountObject.nomineeEmail">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('nomineeEmail','required')">*required</p>
+                    <p class="help is-danger" *ngIf="hasError('nomineeEmail','email')">*email is invalid</p>
+
+
+        </div>
+    </div>
+
+    <hr>
+    <!-- address -->
+    <div>
+        <div>
+            <div class="columns">
+                <div class="column">
+                    <!-- house number -->
+                    <div class="field">
+                        <label class="label">House No.</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="nomineeHouseNo" name="nomineeHouseNo" [(ngModel)]="accountObject.nomineeHouseNo">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('nomineeHouseNo','required')">*required</p>
+
+                </div>
+                <div class="column">
+                    <!-- street number -->
+                    <div class="field">
+                        <label class="label">Street Name</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="nomineeStreetName" name="nomineeStreetName" [(ngModel)]="accountObject.nomineeStreetName">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('nomineeStreetName','required')">*required</p>
+
+                </div>
+                <div class="column">
+                    <!-- areaa -->
+                    <div class="field">
+                        <label class="label">Area</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="nomineeArea" name="nomineeArea" [(ngModel)]="accountObject.nomineeArea">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('nomineeArea','required')">*required</p>
+
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <!-- cityy -->
+                    <div class="field">
+                        <label class="label">City</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="nomineeCity" name="nomineeCity" [(ngModel)]="accountObject.nomineeCity">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('nomineeCity','required')">*required</p>
+
+                </div>
+                <div class="column">
+                    <!-- state -->
+                    <div class="field">
+                        <label class="label">State</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="nomineeState" name="nomineeState" [(ngModel)]="accountObject.nomineeState">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('nomineeState','required')">*required</p>
+
+                </div>
+
+                <div class="column">
+                    <!-- land markkk -->
+                    <div class="field">
+                        <label class="label">LandMark</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="nomineeLandMark" name="nomineeLandMark" [(ngModel)]="accountObject.nomineeLandMark">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('nomineeLandMark','required')">*required</p>
+
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+
+                    <label class="label">Country</label>
+                    <!-- countryyy -->
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <div class="select is-fullwidth">
+                                <select name="nomineeCountry" formControlName="nomineeCountry" [(ngModel)]="accountObject.nomineeCountry">
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Chile">Chile</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Ecuador">Ecuador</option>
+                                    <option value="Guyana">Guyana</option>
+                                    <option value="Paraguay">Paraguay</option>
+                                    <option value="Peru">Peru</option>
+                                    <option value="Suriname">Suriname</option>
+                                    <option value="Uruguay">Uruguay</option>
+                                    <option value="Venezuela">Venezuela</option>
+                                    <option value="India">India</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <div class="control">
+                                <button class="button is-primary">Country</button>
+                              </div>
+                            </div> -->
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('nomineeCountry','required')">*required</p>
+                    <input type="text" hidden formControlName="userId" name="userId" [(ngModel)]="accountObject.User.userId">
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div>
+        <button class="button is-primary" (click)="saveAccounts()">Save</button>
+        <button class="button is-primary" (click)="next()" >Next</button>
+
+        <button class="button is-primary" id="cancel" (click)="cancel()">Cancel</button>
+    
+    </div>
+    
+</form>
+

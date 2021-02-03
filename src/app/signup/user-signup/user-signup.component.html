@@ -1,0 +1,399 @@
+
+<form [formGroup]="registerForm">
+    <div class="register">
+        <span class="heading">Register</span>
+        <hr>
+        <div class="columns">
+            <div class="column">
+                <!-- salutation -->
+                <div class="field ">
+                    <label class="label">Salutation</label>
+                    <div class="control is-expanded">
+                        <div class="select ">
+                            <!-- [ngClass]="{'is-danger':hasError('salutation','required')}" -->
+                            <select formControlName="salutation"  name="salutation" [(ngModel)]="user.salutation">
+                                <option>Mr.</option>
+                                <option>Mrs.</option>
+                                <option>Miss.</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="help is-danger" *ngIf="hasError('salutation','required')">*required</p>
+            </div>
+        </div>
+        <!-- about name and all -->
+        <div class=columns>
+            <div class="column">
+                <!-- first name -->
+                <div class="field">
+                    <label class="label">First Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input" formControlName="firstName" name="firstName" [(ngModel)]="user.firstName">
+                    </div>
+                </div>
+                <p class="help is-danger" *ngIf="hasError('firstName','required')">*required</p>
+
+
+            </div>
+            <div class="column">
+                <!-- middle name -->
+                <div class="field">
+                    <label class="label">Middle Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input" formControlName="middleName" name="middleName" [(ngModel)]="user.middleName">
+                    </div>
+                </div>
+                <p class="help is-danger" *ngIf="hasError('middleName','required')">*required</p>
+
+
+            </div>
+            <div class="column">
+                <!-- last name -->
+                <div class="field">
+                    <label class="label">Last Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input" formControlName="lastName" name="lastName" [(ngModel)]="user.lastName">
+                    </div>
+                </div>
+                <p class="help is-danger" *ngIf="hasError('lastName','required')">*required</p>
+
+            </div>
+
+        </div>
+        <hr>
+        <!-- addresses -->
+        <div>
+            <div class="columns">
+                <div class="column">
+                    <!-- house number -->
+                    <div class="field">
+                        <label class="label">House No.</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="houseNumber" name="houseNumber" [(ngModel)]="user.houseNo">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('houseNumber','required')">*required</p>
+
+                </div>
+                <div class="column">
+                    <!-- street number -->
+                    <div class="field">
+                        <label class="label">Street Name</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="streetName" name="streetName" [(ngModel)]="user.streetName">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('streetName','required')">*required</p>
+
+                </div>
+                <div class="column">
+                    <!-- areaa -->
+                    <div class="field">
+                        <label class="label">Area</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="area" name="area" [(ngModel)]="user.area">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('area','required')">*required</p>
+
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <!-- cityy -->
+                    <div class="field">
+                        <label class="label">City</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="city" name="city" [(ngModel)]="user.city">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('city','required')">*required</p>
+
+                </div>
+                <div class="column">
+                    <!-- state -->
+                    <div class="field">
+                        <label class="label">State</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="state" name="state" [(ngModel)]="user.state">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('state','required')">*required</p>
+
+                </div>
+
+                <div class="column">
+                    <!-- land markkk -->
+                    <div class="field">
+                        <label class="label">LandMark</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input" formControlName="landMark" name="landMark" [(ngModel)]="user.landMark">
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('landMark','required')">*required</p>
+
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+
+                    <label class="label">Country</label>
+                    <!-- countryyy -->
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <div class="select is-fullwidth">
+                                <select name="country" formControlName="country" [(ngModel)]="user.country">
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Chile">Chile</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Ecuador">Ecuador</option>
+                                    <option value="Guyana">Guyana</option>
+                                    <option value="Paraguay">Paraguay</option>
+                                    <option value="Peru">Peru</option>
+                                    <option value="Suriname">Suriname</option>
+                                    <option value="Uruguay">Uruguay</option>
+                                    <option value="Venezuela">Venezuela</option>
+                                    <option value="India">India</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <div class="control">
+                                <button class="button is-primary">Country</button>
+                              </div>
+                            </div> -->
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('country','required')">*required</p>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <!-- contacts details.... -->
+            <div class="columns">
+                <div class="column">
+                    <!-- phone number -->
+                    <label class="label">Phone No.</label>
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field is-expanded">
+                                <div class="field has-addons">
+                                    <p class="control">
+                                        <a class="button is-static">
+                                            +91
+                                        </a>
+                                    </p>
+                                    <p class="control is-expanded">
+                                        <input class="input" type="tel" placeholder="Your phone number"
+                                            formControlName="phoneNumber"
+                                            name="phoneNumber" [(ngModel)]="user.phoneNumber" maxlength="10" minlength="10">
+                                    </p>
+                                </div>
+                                <p class="help">Do not enter the first zero</p>
+                                <p class="help is-danger" *ngIf="hasError('phoneNumber','required')">*required</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="column">
+                    <label class="label">Email:</label>
+                    <!-- email -->
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left has-icons-right">
+                            <input class="input is-success" type="email" placeholder="Email" value="alex@smith.com"
+                                formControlName="email"
+                                name="email" [(ngModel)]="user.email">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('email','required')">*required</p>
+                    <p class="help is-danger" *ngIf="hasError('email','email')">*email is invalid</p>
+
+                </div>
+
+
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <label class="label">Alternate Phone No.</label>
+                    <!-- alternate phone number -->
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field is-expanded">
+                                <div class="field has-addons">
+                                    <p class="control">
+                                        <a class="button is-static">
+                                            +91
+                                        </a>
+                                    </p>
+                                    <p class="control is-expanded">
+                                        <input class="input" type="tel" placeholder="Your phone number"
+                                            formControlName="alternatePhoneNumber" name="alternatePhoneNumber" maxlength="10" minlength="10" [(ngModel)]="user.alternateNumber">
+                                    </p>
+                                </div>
+                                <p class="help">Do not enter the first zero</p>
+                                <p class="help is-danger" *ngIf="hasError('alternatePhoneNumber','required')">*required
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="column">
+                    <label class="label">Alternate Email:</label>
+                    <!-- alternate email -->
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left has-icons-right">
+                            <input class="input is-success" type="email" placeholder="Email" value="alex@smith.com"
+                                formControlName="alternateEmail" name="alternateEmail" [(ngModel)]="user.alternateEmail">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('alternateEmail','required')">*required</p>
+                    <p class="help is-danger" *ngIf="hasError('alternateEmail','email')">*email is invalid</p>
+
+
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <!-- individual or organization -->
+        <div>
+            <div class="columns">
+                <div class="column">
+                    <label class="label is-normal">Registered As</label>
+                    <!-- registered as -->
+                    <div class="field is-horizontal is-large">
+                        <div class="field-body">
+                            <div class="field is-narrow">
+                                <div class="control">
+                                    <label class="radio ">
+                                        <input type="radio" name="member" formControlName="registrationType"
+                                            name="registrationType" value="individual" [(ngModel)]="user.registrationType">
+                                        Individual
+                                    </label>
+                                    <label class="radio ">
+                                        <input type="radio" name="member" formControlName="registrationType"
+                                            name="registrationType" value="organization" [(ngModel)]="user.registrationType">
+                                        Organization
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('registrationType','required')">*required</p>
+
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Tax ID</label>
+                            <!-- tax ids -->
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Text input" formControlName="taxID"
+                                    name="taxID" 
+                                    [(ngModel)]="user.taxId"
+                                    >
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <p class="help is-danger" *ngIf="hasError('taxID','required')">*required</p>
+
+            </div>
+
+        </div>
+
+        <hr>
+        <!-- user details -->
+        <div>
+            <div class="columns">
+                <div class="column">
+                    <label class="label">UserName :</label>
+                    <div class="field">
+                        <!-- username -->
+                        <p class="control is-expanded has-icons-left has-icons-right">
+                            <input class="input is-success" type="email" placeholder="Email" value="alex@smith.com"
+                                formControlName="userName" name="userName" [(ngModel)]="user.userId">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('userName','required')">*required</p>
+
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <!-- user password -->
+                        <label class="label">Password:</label>
+                        <p class="control has-icons-left">
+                            <input class="input" type="password" placeholder="Password" formControlName="password"
+                             #password  name="password" [(ngModel)]="user.password">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('password','required')">*required</p>
+
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Confirm Password:</label>
+                        <p class="control has-icons-left">
+                            <input class="input" type="password" placeholder="Password"
+                             #confirmPassword    
+                            formControlName="confirmPassword" name="confirmPassword">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('confirmPassword','required')">*</p>
+
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-link" [disabled]="registerForm.invalid" (click)="submitForm()">Submit</button>
+            </div>
+            <div class="control">
+                <button class="button is-link is-light" [disabled]="registerForm.pristine"
+                    (click)="resetForm()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</form>

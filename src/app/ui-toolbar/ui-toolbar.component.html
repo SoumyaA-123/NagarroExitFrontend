@@ -1,0 +1,43 @@
+<nav class="navbar is-link" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.nagarro.com/en/careers">
+        <img src="assets/tiger.png" width="80" height="200" id="logo">
+      </a>
+      <h1 class="quote-line">  ATMA NIRBHAR BHARAT</h1>
+      <a role="button" class="navbar-burger is-light" 
+      aria-label="menu" 
+      navbar-toggle 
+      #nbToggle="nbToggler"
+      aria-expanded="false" 
+      data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+   
+    <div id="navbarBasicExample" class="navbar-menu" [ngClass]="{'is-active':nbToggle.isNavMenuActive()}">
+      <div class="navbar-start">
+         
+       </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div routerLink='/about'><a class=" is-light"><strong>Home</strong></a></div>
+          <hr>
+          <div routerLink='/login'>
+            <a class=" is-light">
+              <strong>Log in</strong>
+            </a>
+          </div>
+          <hr>
+          <div  routerLink='/signup'>
+            <a class="is-light" >
+              <strong>Register</strong>
+            </a>
+          </div>
+          
+        
+        </div>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,35 @@
+
+
+    <form class="documentsform" [formGroup]="documentForm">
+        <h1 id="heading">Upload Documents</h1>
+        <hr>
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Adhar Card:</label>
+                    <div class="control">
+                        <input class="input" type="file" placeholder="Text input" formControlName="adhar"
+                            name="adhar" (change)="onAdharSelect($event)">
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="column">
+                <div class="field">
+                    <label class="label">Tax Id:</label>
+                    <div class="control">
+                        <input class="input" type="file" placeholder="Text input" formControlName="taxIds"
+                            name="taxIds" (onchange)="onTaxIdsSelect($event)">
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+<hr>
+<div>
+    <button class="button is-primary" (click)="submitDocuments()" [disabled]="documentForm.invalid">Submit</button>
+    <button class="button is-primary" (click)="next()" >Next</button>
+    <button class="button is-primary" id="cancel" (click)="cancel()" [disabled]="documentForm.pristine">Cancel</button>
+
+</div>
+</form>

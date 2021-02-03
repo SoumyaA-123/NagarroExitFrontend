@@ -1,0 +1,38 @@
+<!-- <full-calendar [options]="calendarOptions"></full-calendar> -->
+
+
+<div>
+    <form class="form" [formGroup]="inspectionform">
+        <h1 id="heading">Fixed Your Appointment</h1>
+        <hr>
+        <div class="columns">
+            <div class="column">
+                <label class="label">Date of Appointment</label>
+                <div class="field">
+                <input type="date" formControlName="date" name="date" [(ngModel)]="inputDate">
+            </div>
+            </div>
+            <div class="column">
+                <label class="label">Time of Appointment</label>
+                <div class="field">
+                    <input type="time" formControlName="time" name="time" [(ngModel)]="inputTime">
+                </div>
+              
+            </div>
+            <div class="column">
+              <div class="field">
+                <button class="button is-right" (click)="saveInspection()">Confirm Your Appointment</button>
+              </div>
+                
+            </div>
+        </div>
+        <hr>
+        <div>
+            <!-- <button class="button is-primary" id="back" (click)="backto()">back</button> -->
+            <button class="button is-primary" id="register" (click)="LastRegister()" >Submit</button>
+            
+        </div>
+    </form>
+</div>
+
+
