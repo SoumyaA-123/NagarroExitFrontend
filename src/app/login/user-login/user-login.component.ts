@@ -4,13 +4,13 @@ import { User } from 'src/app/models/User.interface';
 import { UserserviceService } from '../userservice.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { loginUser } from 'src/app/models/loginUser.interface';
-import { ShareDataService } from '../shareData.service';
+
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.scss'],
-  providers: [UserserviceService,ShareDataService]
+  providers: [UserserviceService]
 })
 export class UserLoginComponent implements OnInit {
 
@@ -26,7 +26,7 @@ export class UserLoginComponent implements OnInit {
     password: ""
 
   }
-  constructor(private sharedata:ShareDataService,private userservice: UserserviceService, private route: ActivatedRoute, private router: Router) {
+  constructor(private userservice: UserserviceService, private route: ActivatedRoute, private router: Router) {
   }
   ngOnInit(): void {
   }
